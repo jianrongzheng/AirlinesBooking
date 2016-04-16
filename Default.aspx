@@ -3,8 +3,8 @@
     <table align="center" border="0" cellpadding="0" cellspacing="0"
         height="300" width="776">
         <tr>
-            <td align="middle" background="images/leftbg.gif" valign="top" width="181">
-                <table background="images/lefttitle.gif" border="0" cellpadding="0" cellspacing="0"
+            <td align="middle"  valign="top" width="181">
+                <table border="0" cellpadding="0" cellspacing="0"
                     height="31" style="color: #0000ff; " width="181">
                     <tr>
                         <td width="20">
@@ -114,7 +114,7 @@
                                                 <td height="130" style="border-right: #d2d2d2 1px solid; border-top: #d2d2d2 1px solid;
                                                     border-left: #d2d2d2 1px solid; width: 1208px; border-bottom: #d2d2d2 1px solid"
                                                     valign="top">
-                                                    <table background="images/tbg.jpg" border="0" cellpadding="0" cellspacing="0" height="26"
+                                                    <table border="0" cellpadding="0" cellspacing="0" height="26"
                                                         width="100%">
                                                         <tr>
                                                             <td align="middle" width="35" style="height: 23px">
