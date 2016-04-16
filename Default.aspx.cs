@@ -62,5 +62,46 @@ public partial class _Default : System.Web.UI.Page
         TABLE1.Visible = true;
         table2.Visible = false;
     }
+    private void getTInfoList()
+    {
+        try
+        {
+            DataSet ds = new DataSet();
+
+            AirTicketWeb.BLL.TInfo GetTInfo = new AirTicketWeb.BLL.TInfo();
+            ds = GetTInfo.GetAllList();
+
+            PagedDataSource objPds = new PagedDataSource();
+            objPds.DataSource = ds.Tables[0].DefaultView;
+
+            objPds.AllowPaging = true;
+            objPds.PageSize = 12;
+
+            int CurPage;
+            if (Request.QueryString["Page"] != null)
+                CurPage = Convert.ToInt32(Request.QueryString["Page"]);
+            else
+                CurPage = 1;
+
+            objPds.CurrentPageIndex = CurPage - 1;
+            lblCurrentPage.Text = CurPage.ToString();
+            lblSumPage.Text = objPds.PageCount.ToString();
+
+            DataList1.DataSource = objPds;
+            DataList1.DataBind();
+
+
+        }
+        catch
+        {
+
+        }
+
+    }
+
+    protected void DataList1_SelectedIndexChanged(object sender, EventArgs e)
+    {
+
+    }
 
 }
