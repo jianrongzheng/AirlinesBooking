@@ -48,5 +48,19 @@ public partial class _Default : System.Web.UI.Page
             Label1.Text = "Error.Please be aware that your ID/Password are case sensitive.Please check and re-enter.";
         }
     }
-   
+    protected void LinkButton1_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("register.aspx");
+    }
+    protected void lbtnLogout_Click(object sender, EventArgs e)
+    {
+
+        Session["Users"] = null;
+        Session.Abandon();
+        Session.Clear();
+
+        TABLE1.Visible = true;
+        table2.Visible = false;
+    }
+
 }
