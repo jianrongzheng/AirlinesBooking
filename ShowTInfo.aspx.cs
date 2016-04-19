@@ -17,7 +17,7 @@ public partial class ShowTInfo : System.Web.UI.Page
         {
           
        
-
+            //
             if (Request.Params["id"] != null && Request.Params["id"].Trim() != "")
             {
                 string id = Request.Params["id"];
@@ -29,6 +29,7 @@ public partial class ShowTInfo : System.Web.UI.Page
     }
     private void ShowInfo(int id)
     {
+        //connect to database to show information on the textbox
         AirTicketWeb.BLL.TInfo bll = new AirTicketWeb.BLL.TInfo();
         AirTicketWeb.Model.TInfo model = bll.GetModel(id);
 
@@ -49,12 +50,14 @@ public partial class ShowTInfo : System.Web.UI.Page
     }
     protected void LinkButton1_Click(object sender, EventArgs e)
     {
+        // Need to confirm user if log in
         if (Session["Users"] == null)
         {
             Maticsoft.DBUtility.js.AlertAndRedirect("Sorry. You need to log in.", "login.aspx");
         }
         else
         {
+            //connect to database update user's order
             string TName = this.txtname.Text;
             int TId = int.Parse(Request.Params["id"].ToString());
             string UserName = Session["Users"].ToString();
